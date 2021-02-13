@@ -13,6 +13,8 @@
 
 - express, middleware
 ->liveserver를 사용하기 때문에 크게 필요하진 않았지만 새로운 노드의 기능을 알게되었다.  
-->node.js에서 express설치하여 파일을 읽어오고, middleware로 이미지와 css파일을 불러오게 했다.
+->node.js에서 express설치하여 파일을 읽어오고, middleware로 이미지와 css파일을 불러오게 했다.  
+
+<👇🏼영상연결 사진클릭!>
 
 [![airbnb](https://postfiles.pstatic.net/MjAyMTAyMTNfMTA2/MDAxNjEzMjA3NTQyNTA5.11O8wH77ZRXtRTbAeddCoiMcaOji8ZHw-QP3BtZ75uQg.RydUK6MNR1hw08msAERAw3R-qxdHaF1R_LZK3x3nTtwg.PNG.namju1v/image.png?type=w966)](https://youtu.be/Ahd4zDl-V9c) 
