@@ -8,6 +8,10 @@ body {
   color: rgba(0, 0, 0, 1);
 }
 
+.hide_show {
+  display: none;
+}
+
 a {
   text-decoration: none;
   color: rgba(0, 0, 0, 1);
@@ -41,6 +45,53 @@ a:hover {
 section span {
   font-size: 18px;
   font-weight: 800;
+}
+
+.header2 {
+  background: rgba(255, 255, 255);
+  z-index: 9999;
+  position: sticky;
+  top: 0;
+}
+
+.h2_layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 15px;
+}
+
+.header2 .logoIMG {
+  fill: rgba(255, 56, 92, 1);
+}
+
+.header2 .menu_right .toggleBtn {
+  border: 1px solid rgba(184, 164, 164, 0.633);
+}
+
+.header2 .search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(184, 164, 164, 0.633);
+  width: 300px;
+  height: auto;
+  padding: 5px 0;
+  font-size: 14px;
+  position: absolute;
+  left: 40%;
+}
+
+.header2 .search span {
+  font-weight: 800;
+  padding-left: 30px;
+}
+
+.header2 .search button {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
 }
 
 /** HEADER =====================**/
@@ -80,40 +131,42 @@ header .background::before {
   );
 }
 
-header .menuGroup {
+header .basic_menu {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: baseline;
   color: rgba(255, 255, 255, 0.925);
   margin-top: 35px;
+  position: relative;
 }
 
-header .menuGroup div {
+header .basic_menu div {
   width: 15vw;
 }
 
-header .logoIMG {
+.logoIMG {
   width: 100px;
   height: auto;
 }
 
-header .menu_center {
+.menu_center {
   min-width: 250px;
+  position: absolute;
+  left: 45%;
 }
 
-header .menu_center a {
+.menu_center a {
   padding: 10px; /*->click을 수월하게*/
   box-sizing: border-box;
   color: rgba(255, 255, 255);
   position: relative;
 }
-
-header .menu_center a:hover {
+.menu_center a:hover {
   color: rgba(255, 255, 255, 0.804);
 }
 
-header .menu_center a:hover::after {
+.header1 .menu_center a:hover::after {
   content: "";
   width: 2px;
   height: 1.5px;
@@ -125,7 +178,7 @@ header .menu_center a:hover::after {
   transition: 0.2s;
 }
 
-header .menu_center a:focus::after {
+.header1 .menu_center a:focus::after {
   content: "";
   width: 20px;
   height: 1.5px;
@@ -136,25 +189,25 @@ header .menu_center a:focus::after {
   display: block;
 }
 
-header .menu_center a:last-child::after {
+.header1 .menu_center a:last-child::after {
   left: 50px;
 }
 
-header .menu_center a:last-child:focus::after {
+.header1 .menu_center a:last-child:focus::after {
   width: 20px;
   left: 40px;
 }
 
-header .menu_right {
+.menu_right {
   display: flex;
   justify-content: space-evenly;
 }
 
-header .menu_right :hover {
+.menu_right :hover {
   cursor: pointer;
 }
 
-header .menu_right div {
+.menu_right div {
   width: auto;
   height: auto;
 }
@@ -165,12 +218,12 @@ header .menu_right div {
   border-radius: 30px;
 }
 
-header .host {
+.host {
   padding: 15px;
   min-width: 90px;
 }
 
-header .language {
+.language {
   background-repeat: no-repeat;
   width: 16px;
   height: 16px;
@@ -178,7 +231,7 @@ header .language {
   margin-right: 10px;
 }
 
-header .toggleBtn {
+.toggleBtn {
   padding: 5px 10px;
   border: none;
   border-radius: 50px;
@@ -187,25 +240,21 @@ header .toggleBtn {
   align-items: center;
 }
 
-header .toggle .list {
+.toggle .list {
   width: 16px;
   height: 16px;
   padding-right: 10px;
 }
 
-header .personIMG {
+.personIMG {
   width: 30px;
   height: 30px;
 }
 
-header .menu_right .hide_show {
-  display: none;
-}
-
-header .toggleMenu {
+.toggleMenu {
   position: absolute;
   right: 0;
-  background-color: rgba(255, 255, 255, 0.925);
+  background-color: rgba(255, 255, 255, 1);
   width: 240px;
   height: auto;
   border-radius: 10px;
@@ -217,11 +266,11 @@ header .toggleMenu li {
   padding: 15px 10px;
 }
 
-header .toggle li:hover {
-  background-color: rgba(230, 230, 230, 0.863);
+.toggle li:hover {
+  background-color: rgba(230, 230, 230, 0);
 }
 
-header .toggle a {
+.toggle a {
   padding: 0 5px;
   color: rgb(48, 48, 48);
   font-size: 14px;
@@ -231,36 +280,52 @@ header .toggle a {
   font-weight: 800;
 }
 
-header .search {
-  width: 850px;
-  height: 70px;
+.search {
+  width: 840px;
+  height: auto;
   margin: 15px auto;
   background-color: rgba(255, 255, 255, 1);
   border-radius: 50px;
-  position: relative;
-}
-
-header .search .outerdiv {
-  display: flex;
-  justify-content: space-between;
-}
-
-header .search .innerdiv {
   box-sizing: border-box;
-  width: 25vw;
-  margin: 19px 0px;
-  padding: 0px 20px;
+}
+
+.search .outerdiv {
+  display: flex;
+}
+
+.search .innerdiv {
+  box-sizing: border-box;
+  padding: 0px 15px;
+  margin: 10px 0;
   border-left: 1px solid rgba(73, 67, 67, 0.404);
   font-size: 12px;
   font-weight: 800;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
 }
 
-header .search .innerdiv:first-child {
-  width: 30vw;
+#inner1 input {
+  width: 200px;
 }
 
-header .search .innerdiv:hover {
-  padding: 19px 20px;
+#inner1 {
+  border-left: none;
+}
+
+#inner4 {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+#inner4 div {
+  width: 150px;
+}
+
+.search .innerdiv:hover {
+  box-sizing: border-box;
+  padding: 10px 15px;
   margin: 0;
   background-color: rgba(230, 230, 230, 0.863);
   border-radius: 50px;
@@ -270,26 +335,21 @@ header .search .innerdiv:hover {
 
 .search input {
   background: transparent;
-  width: 150px;
+  width: 160px;
   margin-top: 5px;
-  display: block;
   border: none;
   padding: 0;
 }
 
-header .search button {
+.search button {
   background-color: rgba(255, 56, 92, 1);
-  color: rgba(255, 255, 255, 0);
   border: none;
   border-radius: 50px;
   width: 50px;
   height: 50px;
-  position: absolute;
-  top: 10px;
-  right: 15px;
 }
 
-header .search button img {
+.search button img {
   width: 15px;
   height: 15px;
 }
